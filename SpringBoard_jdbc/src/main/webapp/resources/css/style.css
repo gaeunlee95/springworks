@@ -1,0 +1,30 @@
+@charset "UTF-8";
+*{text-decoration: none; textarea{resize: none;}
+
+#content{width: 100%;}
+h2{color: #00f; text-align: center;}
+.main-pic{display: flex;justify-content: center;}
+.menu{text-align: center; margin: 10px;}
+a{text-align: center;}
+
+/* 글쓰기 스타일 */
+#content table, tr, th, td{
+	border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 10px;
+    margin: 10px auto;
+}
+#welcome {
+    text-align: center;
+}
+.btn_write{
+    margin: 0 auto;
+    text-align: end;
+    width: 390px;
+}
+button{
+	padding: 5px 10px;
+}
+#content td{
+	
+}
