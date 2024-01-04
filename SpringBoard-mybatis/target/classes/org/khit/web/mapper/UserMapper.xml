@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="org.khit.web.mapper.UserMapper"> <!-- namespace : 소속 -->
+  	<insert id="insert"> <!-- id="메서드명" -->
+  		insert into users(userid, userpasswd, username, userage) 
+  		values(#{userId}, #{userPasswd}, #{userName}, #{userAge}) <!-- name --> 
+  	</insert>
+  	
+  	<select id="findAll" resultType="org.khit.web.dto.UserDTO">
+  		select * from users;
+  	</select>
+  	
+  	<select id="findById" resultType="org.khit.web.dto.UserDTO">
+  		select * from users where id = #{id}
+  	</select>
+  	
+  	<select id="login" resultType="org.khit.web.dto.UserDTO">
+  		select * from users where userid = #{userId} and userpasswd = #{userPasswd}
+  	</select>
+  	
+  	<select id="findByUserId" resultType="org.khit.web.dto.UserDTO">
+  		select * from users where userid = #{userId}
+  	</select>
+  	
+  	<update id="update"> 
+  		update users 
+  		set userpasswd = #{userPasswd}, username = #{userName}, userage = #{userAge}
+		where id = #{id} 
+  	</update>
+  	
+  	<delete id="delete"> 
+  		delete from users where id = #{id} 
+  	</delete>
+  	
+  </mapper>
