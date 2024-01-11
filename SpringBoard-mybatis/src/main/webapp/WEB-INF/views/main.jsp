@@ -22,6 +22,10 @@
 		const update = () => {
 			location.href = "/user/update";
 		}
+		
+		const update = function() {
+			
+		};
 	</script>
 </body>
 </html>

@@ -11,10 +11,33 @@
   	</insert>
   	
   	<select id="findAll" resultType="org.khit.web.dto.BoardDTO">
-  		select * from boards order by id desc;
+  		select * from boards order by id desc
   	</select>
   	
   	<select id="findById" resultType="org.khit.web.dto.BoardDTO">
-  		select * from boards where id = #{id};
+  		select * from boards where id = #{id}
   	</select>
+  	
+  	<update id="updateHit">
+  		update boards set hit=hit+1 where id=#{id}
+  	</update>
+  	
+  	<delete id="delete">
+  		delete from boards where id=#{id}
+  	</delete>
+  	
+  	<update id="update">
+  		update boards 
+  		set boardtitle=#{boardTitle}, boardcontent=#{boardContent}, updatedtime=now()
+  		where id=#{id}
+  	</update>
+  	
+  	<select id="pagingList"  resultType="org.khit.web.dto.BoardDTO">
+  		select * from boards order by id desc limit #{start}, #{limit}
+  	</select>
+  	
+  	<select id="boardCount"  resultType="Integer">
+  		select count(id) from boards
+  	</select>
+  	
    </mapper>

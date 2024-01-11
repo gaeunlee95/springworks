@@ -40,6 +40,7 @@ footer{height: 80px; border-top: 2px solid #222; clear: both;}
     height: 30px;
 }
 #container button{
+	margin-top: 10px;
     padding: 2px 5px;
 }
 
@@ -48,3 +49,28 @@ footer{height: 80px; border-top: 2px solid #222; clear: both;}
 	border: 1px solid black;
     padding: 10px;
 }
+
+/* detail 스타일 */
+#detail .reply {
+	padding: 5px 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#detail .replyLogin{
+	border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+/* pagelist 스타일 */
+#pagelist .current_page{
+	color: blue;
+	font-weight: bold;
+}
+
+/* replyupdate 스타일 */
+#replyupdate input {
+    padding: 2px 5px;
+}
+
+

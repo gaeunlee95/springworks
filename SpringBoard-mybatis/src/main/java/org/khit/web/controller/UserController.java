@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -106,5 +107,15 @@ public class UserController {
 	public String deleteUser(@RequestParam("id") Long id) {
 		 userService.delete(id);
 		 return "redirect:/user/";	//강제로 페이지 이동
+	}
+	
+	//아이디 중복 검사
+	@PostMapping("/checkuserid")
+	public @ResponseBody String CheckUserId(
+			@RequestParam("userId") String userId) {
+		log.info(userId);
+		String checkResult = userService.checkUserId(userId);
+		log.info(checkResult);
+		return checkResult; //"usable" or"not_usalbe" 리턴
 	}
 }
